@@ -1,0 +1,47 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  wintimer.cpp
+  asiosmpl.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(87,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(107,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(173,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(185,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(194,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(301,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(370,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(514,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(522,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosmpl.cpp(639,78): warning C4244: '=': conversion from 'double' to 'unsigned long', possible loss of data
+  register.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(67,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(70,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(76,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(85,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(88,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(91,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(94,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(101,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(104,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(107,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(113,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(118,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(123,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(154,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(158,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(164,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(167,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(170,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(204,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(272,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\register.cpp(308,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  dllentry.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\dllentry.cpp(272,17): warning C4996: 'GetVersionExA': was declared deprecated
+  combase.cpp
+  Generating Code...
+..\asiosample.def(2): warning LNK4017: DESCRIPTION statement not supported for the target platform; ignored
+..\asiosample.def(3): warning LNK4017: PROTMODE statement not supported for the target platform; ignored
+..\asiosample.def : warning LNK4104: export of symbol 'DllGetClassObject' should be PRIVATE
+..\asiosample.def : warning LNK4104: export of symbol 'DllCanUnloadNow' should be PRIVATE
+..\asiosample.def : warning LNK4104: export of symbol 'DllRegisterServer' should be PRIVATE
+..\asiosample.def : warning LNK4104: export of symbol 'DllUnregisterServer' should be PRIVATE
+     Creating library .\Debug\asiosample.lib and object .\Debug\asiosample.exp
+  asiosample.vcxproj -> C:\DEV\asiosdk_2.3.3_2019-06-14\driver\asiosample\asiosample\Debug\asiosample.dll

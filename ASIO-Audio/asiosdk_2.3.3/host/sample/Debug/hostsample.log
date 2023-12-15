@@ -1,0 +1,16 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+cl : command line warning D9007: '/Gm' requires '/Zi or /ZI'; option ignored
+  asio.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\asio.cpp(76,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\asio.cpp(86,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\common\asio.cpp(205,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  asiodrivers.cpp
+  asiolist.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\host\pc\asiolist.cpp(87,8): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\host\pc\asiolist.cpp(89,12): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\host\pc\asiolist.cpp(224,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DEV\asiosdk_2.3.3_2019-06-14\host\pc\asiolist.cpp(246,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  hostsample.cpp
+C:\DEV\asiosdk_2.3.3_2019-06-14\host\sample\hostsample.cpp(207,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+  hostsample.vcxproj -> C:\DEV\asiosdk_2.3.3_2019-06-14\host\sample\Debug\hostsample.exe
