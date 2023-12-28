@@ -27,7 +27,7 @@ bool loadAsioDriver(char* name);
 int* audioBuffer = new int[AUDIOBUFFER_SIZE](); // enough for 5 seconds of audio
 #endif
 
-bool* effectEn = new bool[MAX_EFFECTS]();
+std::atomic<bool> effectEn{false};
 
 
 int main(int argc, char* argv[])
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 							// Toggle effect when any char is entered
 							char n;
 							std::cin >> n;
-							effectEn[0] = !effectEn[0];
+							effectEn = !effectEn;
 						}
 						ASIOStop();
 					}

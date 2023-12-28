@@ -1,6 +1,7 @@
 #define _USE_MATH_DEFINES
 
 #include <stdio.h>
+#include <atomic>
 #include <math.h>
 #include "callbacks.h"
 
@@ -10,7 +11,7 @@
 
 #define CONV_FACTOR 2147483648.49999
 
-extern bool* effectEn;
+extern std::atomic<bool> effectEn;
 extern DriverInfo asioDriverInfo;
 #ifdef RECORDING_MODE
 extern int* audioBuffer;
@@ -66,9 +67,8 @@ ASIOTime* bufferSwitchTimeInfo(ASIOTime* timeInfo, long index, ASIOBool processN
 	else
 		asioDriverInfo.stopped = true;
 #else
-	void (*func)(void*, long, long) = tremEffect;
-	if (effectEn[0])
-		func(asioDriverInfo.bufferInfos[1].buffers[index], processedSamples, buffSize);
+	if (effectEn)
+		tremEffect(asioDriverInfo.bufferInfos[1].buffers[index], processedSamples, buffSize);
 
 	// perform the processing
 	for (int i = 0; i < asioDriverInfo.inputBuffers + asioDriverInfo.outputBuffers; i++)
