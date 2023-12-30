@@ -3,6 +3,7 @@
 
 #include "asiosys.h"
 #include "driverinfo.h"
+#include "yin.hpp"
 
 //#define RECORDING_MODE
 #define AUDIOBUFFER_SIZE 240000

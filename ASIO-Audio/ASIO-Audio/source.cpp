@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-#include <iostream>
 #include <atomic>
 
 #include "asiosys.h"
@@ -10,6 +9,8 @@
 #include "driverinfo.h"
 #include "callbacks.h"
 
+#include "yin.hpp"
+
 
 // name of the ASIO device to be used
 #define ASIO_DRIVER_NAME    "Focusrite USB ASIO"
@@ -17,6 +18,8 @@
 
 DriverInfo asioDriverInfo = { 0 };
 ASIOCallbacks asioCallbacks;
+
+Yin myYin = Yin();
 
 //----------------------------------------------------------------------------------
 // some external references
@@ -28,6 +31,24 @@ int* audioBuffer = new int[AUDIOBUFFER_SIZE](); // enough for 5 seconds of audio
 #endif
 
 std::atomic<bool> effectEn{false};
+
+// prototype - turn pitch into note for 6 guitar open strings
+char get_note(float pitch)
+{
+	if (pitch > 80 and pitch < 85)
+		return 'E'; // 82.41Hz
+	if (pitch > 106 and pitch < 113)
+		return 'A'; // 110.00Hz
+	if (pitch > 142 and pitch < 151)
+		return 'D'; // 146.83Hz
+	if (pitch > 190 and pitch < 201)
+		return 'G'; // 196.00Hz
+	if (pitch > 239 and pitch < 254)
+		return 'B'; // 246.94Hz
+	if (pitch > 320 and pitch < 340)
+		return 'e'; // 329.63Hz
+	return ' ';
+}
 
 
 int main(int argc, char* argv[])
@@ -48,32 +69,39 @@ int main(int argc, char* argv[])
 				asioDriverInfo.driverInfo.name, asioDriverInfo.driverInfo.errorMessage);
 			if (init_asio_static_data(&asioDriverInfo) == 0)
 			{
-				// ASIOControlPanel(); you might want to check wether the ASIOControlPanel() can open
-
-				// set up the asioCallback structure and create the ASIO data buffer
-				asioCallbacks.bufferSwitch = &bufferSwitch;
-				asioCallbacks.sampleRateDidChange = &sampleRateChanged;
-				asioCallbacks.asioMessage = &asioMessages;
-				asioCallbacks.bufferSwitchTimeInfo = &bufferSwitchTimeInfo;
-				if (create_asio_buffers(&asioDriverInfo) == ASE_OK)
+				// Buffer size must be 128 to be compatible with Yin
+				if (asioDriverInfo.preferredSize == 128)
 				{
-					if (ASIOStart() == ASE_OK)
+					// ASIOControlPanel(); you might want to check wether the ASIOControlPanel() can open
+
+					// set up the asioCallback structure and create the ASIO data buffer
+					asioCallbacks.bufferSwitch = &bufferSwitch;
+					asioCallbacks.sampleRateDidChange = &sampleRateChanged;
+					asioCallbacks.asioMessage = &asioMessages;
+					asioCallbacks.bufferSwitchTimeInfo = &bufferSwitchTimeInfo;
+					if (create_asio_buffers(&asioDriverInfo) == ASE_OK)
 					{
-						// Now all is up and running
-						//fprintf(stdout, "\nASIO Driver started succefully.\n\n");
-						while (!asioDriverInfo.stopped)
+						if (ASIOStart() == ASE_OK)
 						{
-							//Sleep(100);	// goto sleep for 100 milliseconds
-							// Toggle effect when any char is entered
+							// Now all is up and running
+							//fprintf(stdout, "\nASIO Driver started succefully.\n\n");
+							while (!asioDriverInfo.stopped)
+							{
+								Sleep(100);	// goto sleep for 100 milliseconds
 #ifndef RECORDING_MODE
-							char n;
-							std::cin >> n;
-							effectEn = !effectEn;
+								// NOT THREAD SAFE
+								float pitch = myYin.get_pitch();
+								float harmonic_rate = myYin.get_harmonic_rate();
+								if (harmonic_rate > 0.03)
+									pitch = 0.0;
+								fprintf(stdout, "Note: %c\tPitch: %-3.2f\tRate:% -1.3f\r", get_note(pitch), pitch, harmonic_rate);
+								fflush(stdout);
 #endif
+							}
+							ASIOStop();
 						}
-						ASIOStop();
+						ASIODisposeBuffers();
 					}
-					ASIODisposeBuffers();
 				}
 			}
 			ASIOExit();
@@ -82,6 +110,7 @@ int main(int argc, char* argv[])
 	}
 
 #ifdef RECORDING_MODE
+
 	FILE* fp = fopen("audio/newtest.wav", "wb");
 
 	short fmt = 1;						  // Must be PCM (1)
@@ -112,6 +141,7 @@ int main(int argc, char* argv[])
 
 	fclose(fp);
 	delete(audioBuffer);
+
 #endif
 	return 0;
 }

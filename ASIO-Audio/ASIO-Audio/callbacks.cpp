@@ -13,6 +13,7 @@
 
 extern std::atomic<bool> effectEn;
 extern DriverInfo asioDriverInfo;
+extern Yin myYin;
 #ifdef RECORDING_MODE
 extern int* audioBuffer;
 #endif
@@ -67,15 +68,19 @@ ASIOTime* bufferSwitchTimeInfo(ASIOTime* timeInfo, long index, ASIOBool processN
 	else
 		asioDriverInfo.stopped = true;
 #else
+
 	if (effectEn)
 		tremEffect(asioDriverInfo.bufferInfos[1].buffers[index], processedSamples, buffSize);
+
+	myYin.compute_yin(asioDriverInfo.bufferInfos[1].buffers[index]);
 
 	// perform the processing
 	for (int i = 0; i < asioDriverInfo.inputBuffers + asioDriverInfo.outputBuffers; i++)
 	{
 		if (asioDriverInfo.bufferInfos[i].isInput == false)
 		{
-			memcpy(asioDriverInfo.bufferInfos[i].buffers[index], asioDriverInfo.bufferInfos[1].buffers[index], buffSize * 4);
+			memset(asioDriverInfo.bufferInfos[i].buffers[index], 0, buffSize * 4);
+			//memcpy(asioDriverInfo.bufferInfos[i].buffers[index], asioDriverInfo.bufferInfos[1].buffers[index], buffSize * 4);
 		}
 	}
 
