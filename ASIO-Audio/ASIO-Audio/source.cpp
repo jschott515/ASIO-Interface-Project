@@ -33,7 +33,7 @@ std::atomic<bool> effectEn{false};
 int main(int argc, char* argv[])
 {
 	static_assert(std::atomic<bool>::is_always_lock_free);
-
+	
 	// load the driver, this will setup all the necessary internal data structures
 	if (loadAsioDriver((char*)ASIO_DRIVER_NAME))
 	{
@@ -65,9 +65,11 @@ int main(int argc, char* argv[])
 						{
 							//Sleep(100);	// goto sleep for 100 milliseconds
 							// Toggle effect when any char is entered
+#ifndef RECORDING_MODE
 							char n;
 							std::cin >> n;
 							effectEn = !effectEn;
+#endif
 						}
 						ASIOStop();
 					}
